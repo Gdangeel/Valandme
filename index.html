@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relationship Vaal and Angel</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+        }
+        #image-container {
+            margin: 20px auto;
+            width: 300px;
+            height: 300px;
+            overflow: hidden;
+        }
+        #image-container img {
+            max-width: 100%;
+            height: auto;
+        }
+        #time {
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Relationship Vaal and Angel</h1>
+    
+    <!-- Contenedor para la imagen rotativa -->
+    <div id="image-container">
+        <img id="image" src="images/image1.jpg" alt="Imagen rotativa">
+    </div>
+
+    <div id="time-container">
+        <p id="time">Tiempo transcurrido: </p>
+        <button onclick="document.getElementById('music').play()">Reproducir música</button>
+    </div>
+
+    <audio id="music" autoplay loop>
+        <source src="cancion.mp3" type="audio/mpeg">
+        Tu navegador no soporta la reproducción de audio.
+    </audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
