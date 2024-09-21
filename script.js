@@ -17,32 +17,29 @@ function changeImage() {
 setInterval(changeImage, 5000);
 
 // Código para mostrar el tiempo transcurrido
-let fechaInicio = new Date("2024-08-09T15:20:52");
+let startTime = new Date('2024-08-09T15:20:52'); // Fecha de inicio
 
 function mostrarTiempoTranscurrido() {
-    const ahora = new Date();
-    const tiempoTranscurrido = ahora - fechaInicio;
+    const now = new Date();
+    const timeDiff = now - startTime; // Diferencia en milisegundos
 
-    const segundos = Math.floor(tiempoTranscurrido / 1000);
-    const minutos = Math.floor(segundos / 60);
-    const horas = Math.floor(minutos / 60);
-    const dias = Math.floor(horas / 24);
-    const años = Math.floor(dias / 365);
-    const meses = Math.floor((dias % 365) / 30);
-    const semanas = Math.floor((dias % 30) / 7);
-    const diasRestantes = dias % 7;
+    const years = Math.floor(timeDiff / (1000 * 60 * 60 * 24 * 365));
+    const months = Math.floor((timeDiff % (1000 * 60 * 60 * 24 * 365)) / (1000 * 60 * 60 * 24 * 30));
+    const days = Math.floor((timeDiff % (1000 * 60 * 60 * 24 * 30)) / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((timeDiff % (1000 * 60)) / 1000);
 
-    // Construcción del texto
-    let textoTiempo = "Han pasado: ";
-    if (años > 0) textoTiempo += `${años} año${años > 1 ? 's' : ''}, `;
-    if (meses > 0) textoTiempo += `${meses} mes${meses > 1 ? 'es' : ''}, `;
-    if (semanas > 0) textoTiempo += `${semanas} semana${semanas > 1 ? 's' : ''}, `;
-    if (diasRestantes > 0) textoTiempo += `${diasRestantes} día${diasRestantes > 1 ? 's' : ''}, `;
-    if (horas > 0) textoTiempo += `${horas} hora${horas > 1 ? 's' : ''}, `;
-    if (minutos > 0) textoTiempo += `${minutos} minuto${minutos > 1 ? 's' : ''}, `;
-    if (segundos > 0) textoTiempo += `${segundos} segundo${segundos > 1 ? 's' : ''}.`;
+    let timeText = "Han pasado:<br>";
+    
+    if (years > 0) timeText += years + " " + (years === 1 ? "año, " : "años, ");
+    if (months > 0) timeText += months + " " + (months === 1 ? "mes, " : "meses, ");
+    if (days > 0) timeText += days + " " + (days === 1 ? "día, " : "días, ");
+    if (hours > 0) timeText += hours + " " + (hours === 1 ? "hora, " : "horas, ");
+    if (minutes > 0) timeText += minutes + " " + (minutes === 1 ? "minuto, " : "minutos, ");
+    if (seconds > 0) timeText += seconds + " " + (seconds === 1 ? "segundo" : "segundos");
 
-    document.getElementById("time").innerHTML = textoTiempo;
+    document.getElementById('time').innerHTML = timeText;
 }
 
 // Actualizar el tiempo cada segundo
