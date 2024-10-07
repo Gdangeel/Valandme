@@ -5,11 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Programa Completo</title>
     <style>
+        /* Estilos generales */
+        body {
+            background-color: black; /* Fondo negro */
+            color: white; /* Texto blanco */
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
         /* Centrar el contenedor de la imagen */
         #image-container {
             width: 300px;
             height: 300px;
-            margin: 0 auto;
+            margin: 20px auto; /* Centrar el contenedor vertical y horizontalmente */
             text-align: center;
         }
 
@@ -22,15 +31,25 @@
         /* Estilo para el tiempo transcurrido */
         #time-container {
             text-align: center;
-            font-family: Arial, sans-serif;
             font-size: 16px;
+            margin-bottom: 20px;
         }
 
-        /* Botón de reproducción de música */
+        /* Estilo del botón */
         button {
             padding: 10px 20px;
             font-size: 16px;
             cursor: pointer;
+            background-color: #FF69B4; /* Color rosa */
+            border: none;
+            color: white; /* Texto blanco */
+            border-radius: 5px; /* Bordes redondeados */
+            transition: background-color 0.3s; /* Transición suave en el hover */
+        }
+
+        /* Cambiar color del botón al pasar el mouse por encima */
+        button:hover {
+            background-color: #FF1493; /* Color rosa oscuro al hacer hover */
         }
     </style>
 </head>
