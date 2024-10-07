@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programa Completo</title>
+    <style>
+        #image-container {
+            width: 300px; /* Ajusta el tamaño según lo necesites */
+            height: 300px; /* Ajusta el tamaño según lo necesites */
+            margin: 0 auto; /* Centra el contenedor */
+        }
+
+        #image {
+            width: 100%; /* Asegura que la imagen ocupe el contenedor */
+            height: auto; /* Mantiene la proporción de la imagen */
+        }
+
+        #time-container {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="image-container">
+        <img id="image" src="images/image1.jpg" alt="Imagen rotativa">
+    </div>
+
+    <div id="time-container">
+        <p id="time">Tiempo transcurrido: </p>
+        <button onclick="document.getElementById('music').play()">Reproducir música</button>
+    </div>
+
+    <audio id="music" autoplay loop>
+        <source src="cancion.mp3" type="audio/mpeg">
+        Tu navegador no soporta la reproducción de audio.
+    </audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
